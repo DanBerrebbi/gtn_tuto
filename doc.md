@@ -13,7 +13,9 @@ add a node :  <br/>
 
 
 add an arc : <br/>
-```add_arc(self, src_node: int, dst_node: int, ilabel: int, olabel: int, weight: float = 0.0)```
+```add_arc(self, src_node: int, dst_node: int, ilabel: int, olabel: int, weight: float = 0.0)``` <br/>
 
-draw your graph : : <br/>
+NOTE that the labels should be integers so you should maintain a correspondance id to label somewhere 
+
+draw your graph : <br/>
 ```draw(graph, file_name, isymbols={}, osymbols={})``` 
