@@ -20,12 +20,12 @@ __add a node__  <br/>
 * for a start node : g.add_node(start = True)
 * for an internal node : g.add_node()
 * for an acceptance node : g.add_node(start = False, accept = True)
-* for a start and acceptance node : g.add_node(start = True, accept = True)
-
+* for a start and acceptance node : g.add_node(start = True, accept = True) <br/>
+Returns the id of the node.
 
 __add an arc__ <br/>
 ```add_arc(self, src_node: int, dst_node: int, ilabel: int, olabel: int, weight: float = 0.0)``` <br/>
-
+Returns the id of the arc.<br/>
 NOTE that the labels should be integers so you should maintain a correspondance id to label somewhere 
 
 __draw your graph__ <br/>
@@ -101,5 +101,42 @@ Build a shared vocabulary.
 
 ### Composition
 
+__Theory :__
 Let ```FST1``` and ```FTS2``` be two transducers. Assume that ```FST1``` transduces the sequence x to the sequence y and ```FST2``` transduces the sequence y to the sequence z. Then the composition of  ```FST1``` and ```FST2``` (order matters contrairy to intersection) tranduces x to z. 
 
+
+__gtn for intersection__   : ```compose(g1, g2)``` <br/>
+
+
+__Why composition ? Example of usage__  <br/>
+
+Put together the different components of your model (I'll give more detailled example a bit later with CTC loss)
+
+
+## Advanced usage of automaton
+
+The operations described in the previous section enable to build very complex automaton from tiny graphs through easy operations. This is the strength of finite state automaton. We will now describe more advanced operations and usage you can do with those graphs. 
+
+* compute the forward score of a graph (sum of the weight of all possible path from start state to end state) ```forward_score(g)```
+* compute the Viterbi score and Path  ```viterbi_score(g)``` , ```viterbi_path(g)```
+* enable gradient computation to backpropagate a loss and train the weights for graphs (train the emission weights for instance...)
+
+
+
+## More useful functions in gtn 
+
+* ```linear_graph(M, N, calc_grad=True)``` Create a linear chain graph with M + 1 nodes and N edges between each node.
+* ```equal(g1, g2)``` Checks if two graphs are exactly equal (not isomorphic) (```isomorphic(g1, g2)```).
+* ... more on the official doc
+
+
+<br/>
+<br/>
+
+This small summary will be completed soon with more examples, in particular building useful graphs for ASR. <br/>
+
+Bellow is a list of very important links related with this document.
+
+* [gtn official doc](https://gtn.readthedocs.io/en/latest/index.html) including installing steps. The installing procedure described [here](https://gtn.readthedocs.io/en/latest/install.html) worked well for psc.
+* [The bible to learn on automatas and gtn](https://awnihannun.com/writing/automata_ml/automata_in_machine_learning.pdf). This artcile is very clear and precise, however it is quite long (70 pages) so I summarized some important parts of it here and added comments and examples for ASR.
+* [gtn github](https://github.com/facebookresearch/gtn)
