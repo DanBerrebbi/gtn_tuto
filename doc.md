@@ -8,7 +8,7 @@
 ## List of useful links 
 * [gtn official doc](https://gtn.readthedocs.io/en/latest/index.html) including installing steps. The installing procedure described [here](https://gtn.readthedocs.io/en/latest/install.html) worked well for psc.
 * [The bible to learn on automatas and gtn](https://awnihannun.com/writing/automata_ml/automata_in_machine_learning.pdf). This artcile is very clear and precise, however it is quite long (70 pages) so I summarized some important parts of it here and added comments and examples for ASR.
-* [gtn github](https://github.com/facebookresearch/gtn)
+* [gtn github](https://github.com/facebookresearch/gtn) The github contains some useful tutorials to start with gtn basics.
 
 ## Finite automaton
 
