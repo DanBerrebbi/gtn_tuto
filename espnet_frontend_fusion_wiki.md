@@ -37,7 +37,7 @@ The only file you need to take care to use fusion of front-ends is the yaml conf
 
 We will study the fusion techniques more in depth in the next weeks and refine the tools, in case of any question ping me anytime (Dan Berrebbi). 
 
-
+## 5. Yaml code ready for copy-paste
 ```
 
 #frontend related 
